@@ -5,10 +5,11 @@ A modern web application for converting HTML and CSS code to PNG or JPG images. 
 ## Features
 
 - ✅ Convert HTML/CSS code to PNG or JPG images
-- ✅ Full support for modern CSS (Flexbox, Grid, animations, etc.)
-- ✅ No canvas or wrapper - renders your code directly
+- ✅ **Client-side conversion** - Works entirely in the browser, no server needed
+- ✅ Fixed canvas size: 1080 × 1350px (4:5 aspect ratio, portrait)
 - ✅ High-quality image output (2x device pixel ratio)
-- ✅ Full-page capture (captures entire content, not just viewport)
+- ✅ Live preview of your HTML code
+- ✅ Works on localhost, Vercel, and any hosting platform
 - ✅ Simple, clean interface
 
 ## Technology Stack
@@ -16,17 +17,17 @@ A modern web application for converting HTML and CSS code to PNG or JPG images. 
 - **Next.js 14** - React framework with App Router
 - **TypeScript** - Type-safe code
 - **TailwindCSS** - Modern styling
-- **Puppeteer** - Headless Chrome browser for rendering HTML/CSS with full CSS support
+- **html2canvas** - Client-side HTML to canvas conversion library
 
-## Why Puppeteer?
+## Why html2canvas?
 
-Puppeteer uses a real Chrome browser engine, which means it supports:
-- All modern CSS features (Grid, Flexbox, Custom Properties, etc.)
-- CSS animations and transitions
-- External fonts and resources
-- Complex layouts and styling
-- Media queries
-- And much more!
+html2canvas works entirely in the browser, which means:
+- ✅ No server dependencies (works on Vercel, Netlify, etc.)
+- ✅ No Chrome/Chromium installation needed
+- ✅ Works offline after initial load
+- ✅ Fast conversion without server round-trips
+- ✅ Supports most modern CSS features
+- ✅ Perfect for social media banners and graphics
 
 ## Setup Instructions
 
@@ -61,10 +62,11 @@ Puppeteer uses a real Chrome browser engine, which means it supports:
 
 ## Notes
 
-- The converter captures the full page content, so make sure your HTML has proper dimensions
-- For best results, specify explicit widths and heights in your CSS
-- External resources (images, fonts) will be loaded if accessible
-- The viewport is set to 1920x1080 with 2x pixel ratio for high-quality output
+- The converter uses a fixed canvas size of **1080 × 1350 pixels** (4:5 portrait aspect ratio)
+- Design your HTML/CSS code for this exact size for best results
+- External resources (images, fonts) will be loaded if accessible via CORS
+- The output uses 2x pixel ratio for high-quality images
+- Works entirely in the browser - no server-side processing required
 
 ## Production Build
 
