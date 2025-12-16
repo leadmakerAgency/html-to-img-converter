@@ -5,29 +5,28 @@ A modern web application for converting HTML and CSS code to PNG or JPG images. 
 ## Features
 
 - ✅ Convert HTML/CSS code to PNG or JPG images
-- ✅ **Client-side conversion** - Works entirely in the browser, no server needed
 - ✅ Fixed canvas size: 1080 × 1350px (4:5 aspect ratio, portrait)
+- ✅ Full support for modern CSS (Flexbox, Grid, animations, etc.)
 - ✅ High-quality image output (2x device pixel ratio)
-- ✅ Live preview of your HTML code
-- ✅ Works on localhost, Vercel, and any hosting platform
 - ✅ Simple, clean interface
+- ✅ Perfect for local development
 
 ## Technology Stack
 
 - **Next.js 14** - React framework with App Router
 - **TypeScript** - Type-safe code
 - **TailwindCSS** - Modern styling
-- **html2canvas** - Client-side HTML to canvas conversion library
+- **Puppeteer** - Headless Chrome browser for rendering HTML/CSS with full CSS support
 
-## Why html2canvas?
+## Why Puppeteer?
 
-html2canvas works entirely in the browser, which means:
-- ✅ No server dependencies (works on Vercel, Netlify, etc.)
-- ✅ No Chrome/Chromium installation needed
-- ✅ Works offline after initial load
-- ✅ Fast conversion without server round-trips
-- ✅ Supports most modern CSS features
-- ✅ Perfect for social media banners and graphics
+Puppeteer uses a real Chrome browser engine, which means it supports:
+- All modern CSS features (Grid, Flexbox, Custom Properties, etc.)
+- CSS animations and transitions
+- External fonts and resources
+- Complex layouts and styling
+- Media queries
+- And much more!
 
 ## Setup Instructions
 
@@ -64,9 +63,9 @@ html2canvas works entirely in the browser, which means:
 
 - The converter uses a fixed canvas size of **1080 × 1350 pixels** (4:5 portrait aspect ratio)
 - Design your HTML/CSS code for this exact size for best results
-- External resources (images, fonts) will be loaded if accessible via CORS
+- External resources (images, fonts) will be loaded if accessible
 - The output uses 2x pixel ratio for high-quality images
-- Works entirely in the browser - no server-side processing required
+- **Designed for local use** - Requires Chrome/Chromium to be installed
 
 ## Production Build
 
