@@ -60,7 +60,10 @@ export async function POST(request: NextRequest) {
         omitBackground: format === "png", // Transparent background for PNG
       });
 
-      return new NextResponse(screenshot, {
+      // Convert Buffer to Uint8Array for NextResponse compatibility
+      const imageBuffer = new Uint8Array(screenshot);
+
+      return new NextResponse(imageBuffer, {
         status: 200,
         headers: {
           "Content-Type": format === "png" ? "image/png" : "image/jpeg",
